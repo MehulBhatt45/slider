@@ -1,10 +1,64 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { DatepickerOptions } from 'ng2-datepicker';
+import * as enLocale from 'date-fns/locale/en';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+	title = 'app';
+	color = ['green', 'yellow', 'orange'];
+	couter = 0;
+	startDate;
+	endDate;
+	startoptions: DatepickerOptions = {
+		minYear: 1970,
+		maxYear: 2030,
+		displayFormat: 'MMM D[,] YYYY',
+		barTitleFormat: 'MMMM YYYY',
+		dayNamesFormat: 'dd',
+		firstCalendarDay: 0, // 0 - Sunday, 1 - Monday
+		locale: enLocale,
+		minDate: new Date(Date.now()), // Minimal selectable date
+		placeholder: 'Click to select a date', // HTML input placeholder attribute (default: '')
+		addClass: 'form-control', // Optional, value to pass on to [ngClass] on the input field
+		addStyle: {}, // Optional, value to pass to [ngStyle] on the input field
+		fieldId: 'my-date-picker', // ID to assign to the input field. Defaults to datepicker-<counter>
+		useEmptyBarTitle: false, // Defaults to true. If set to false then barTitleIfEmpty will be disregarded and a date will always be shown 
+	};
+	endoptions: DatepickerOptions = {
+		minYear: 1970,
+		maxYear: 2030,
+		displayFormat: 'MMM D[,] YYYY',
+		barTitleFormat: 'MMMM YYYY',
+		dayNamesFormat: 'dd',
+		firstCalendarDay: 0, // 0 - Sunday, 1 - Monday
+		locale: enLocale,
+		minDate: this.startDate?this.addDays(this.startDate, 1):new Date(Date.now()), // Minimal selectable date
+		placeholder: 'Click to select a date', // HTML input placeholder attribute (default: '')
+		addClass: 'form-control', // Optional, value to pass on to [ngClass] on the input field
+		addStyle: {}, // Optional, value to pass to [ngStyle] on the input field
+		fieldId: 'my-date-picker', // ID to assign to the input field. Defaults to datepicker-<counter>
+		useEmptyBarTitle: false, // Defaults to true. If set to false then barTitleIfEmpty will be disregarded and a date will always be shown
+	};
+	ngOnInit(){
+		var main = document.getElementById('main'); 
+		main.style.backgroundColor = this.color[this.couter];
+		main.style.transition = "all 3s";
+		setInterval(()=>{
+			this.couter++;
+			if(this.couter == 4)
+				this.couter = 0;
+			document.getElementById('main').style.backgroundColor = this.color[this.couter];
+		},3000);
+
+	}
+
+	addDays(date, days) {
+		var result = new Date(date);
+		result.setDate(result.getDate() + days);
+		console.log(result);
+		return result;
+	}
 }
