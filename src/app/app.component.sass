@@ -3,6 +3,9 @@ div.slider_wrapper
 	padding: 0px
 	margin-top: 0px
 	margin-bottom: 0px
+	div.layers
+		padding: 100px
+		display: inline-block
 
 div button.getoffer
 	background-color: white
@@ -30,7 +33,7 @@ nav
     margin: auto 5px
 
 li .ngx-datepicker-container .ngx-datepicker-calendar-container .topbar-container
-	background-color: #4d5567!important;
+	background-color: #4d5567!important
 
 li #guest_no_drop:after, #guest_no_shortcode:after, #guest_no_mobile:after, #booking_guest_no_wrapper:after, #guest_no_widget:after, #guest_no:after
     content: " "
@@ -61,3 +64,45 @@ li button.search-btn
 
 li button.search-btn:hover
 	background-color: #999999!important
+
+div.one h1,.two h1,.three h1
+	font-weight: 900
+	font-size: 50px
+	color: #fff
+	margin: 0px
+	width: 100%
+
+div.one h1 span,
+div.two h1 span,
+div.three h1 span
+	float: left
+	color: #ffffff
+	clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%)
+	transform: translateY(-50px)
+	opacity: 0
+	animation-name: titleAnimation
+	animation-timing-function: ease
+	animation-duration: 5s
+	animation-iteration-count: infinite
+
+
+@keyframes titleAnimation 
+  0% 
+    transform: translateY(-50px)
+    opacity: 0
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%)
+  
+  20% 
+    transform: translateY(0)
+    opacity: 1
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%)
+  
+  80% 
+    transform: translateY(0)
+    opacity: 1
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%)
+  
+  100% 
+    transform: translateY(50px)
+    opacity: 0
+    clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%)

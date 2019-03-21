@@ -45,19 +45,39 @@ export class AppComponent implements OnInit {
 	ngOnInit(){
 		var main = document.getElementById('main'); 
 		// main.style.backgroundColor = this.image[this.couter];
+		document.getElementById('slide_one').style.display = "block";
+		document.getElementById('slide_two').style.display = "none";
+		document.getElementById('slide_three').style.display = "none";
 		main.style.backgroundImage = "url('"+this.image[this.couter]+"')";
 		main.style.backgroundRepeat = "no-repeat";
 		main.style.backgroundSize = "cover";
 		main.style.backgroundAttachment = "fixed";
 		main.style.transition = "all 3s";
 		setInterval(()=>{
-			if(this.couter == 4){
-				this.couter = 0;
-				main.style.backgroundImage = "url('"+this.image[this.couter]+"')";
-			}else{
-				main.style.backgroundImage = "url('"+this.image[this.couter]+"')";
-			}
 			this.couter++;
+			if(this.couter == 3)
+				this.couter = 0;
+			main.style.backgroundImage = "url('"+this.image[this.couter]+"')";
+
+			switch (this.couter) {
+				case 0:
+					document.getElementById('slide_one').style.display = "block";
+					document.getElementById('slide_two').style.display = "none";
+					document.getElementById('slide_three').style.display = "none";
+					break;
+				
+				case 1:
+					document.getElementById('slide_one').style.display = "none";
+					document.getElementById('slide_two').style.display = "block";
+					document.getElementById('slide_three').style.display = "none";
+					break;
+
+				case 2:
+					document.getElementById('slide_one').style.display = "none";
+					document.getElementById('slide_two').style.display = "none";
+					document.getElementById('slide_three').style.display = "block";
+					break;
+			}
 		},5000);
 
 	}
