@@ -8,7 +8,6 @@ import * as enLocale from 'date-fns/locale/en';
 })
 export class AppComponent implements OnInit {
 	title = 'app';
-	image = [ '../assets/welcome-couple.jpg', '../assets/cumbria-web.jpg', '../assets/nothern-web.jpg'];
 	slider = [
 		{
 			image: '../assets/welcome-couple.jpg',
@@ -77,15 +76,17 @@ export class AppComponent implements OnInit {
 		var node = document.getElementById('title').childNodes;
 		console.log("NOdes", node);
 		for(var i=0; i<node.length; i++){
-			node[i].style.animationDelay = 0.05*(i+1)+'s';
+			var n:any = node[i];
+			n.style.animationDelay = 0.05*(i+1)+'s';
 		}
 		setTimeout(()=>{
-				var x = document.querySelectorAll('.latter')
+				var x:any = document.querySelectorAll('.latter')
 				x.forEach(ele=>{
 					ele.style.animationDelay = '0s';
 				})
 			},4000);
 		setInterval(()=>{
+			main.style.overflow= 'auto';
 			this.couter++;
 			if(this.couter == 3)
 				this.couter = 0;
@@ -95,12 +96,13 @@ export class AppComponent implements OnInit {
 			content.innerHTML = this.slider[this.couter].content;
 			button.innerHTML = this.slider[this.couter].button;
 			node = document.getElementById('title').childNodes;
-			console.log("NOdes", node);
+			// console.log("NOdes", node);
 			for(var i=0; i<node.length; i++){
-				node[i].style.animationDelay = 0.05*(i+1)+'s';
+				var n:any = node[i];
+				n.style.animationDelay = 0.05*(i+1)+'s';
 			}
 			setTimeout(()=>{
-				var x = document.querySelectorAll('.latter')
+				var x:any = document.querySelectorAll('.latter')
 				x.forEach(ele=>{
 					ele.style.animationDelay = '0s';
 				})
