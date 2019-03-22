@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
 				})
 			},4000);
 		setInterval(()=>{
-			main.style.overflow= 'auto';
+			// main.style.overflow= 'auto';
 			this.couter++;
 			if(this.couter == 3)
 				this.couter = 0;
