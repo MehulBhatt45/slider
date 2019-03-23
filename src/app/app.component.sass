@@ -60,6 +60,8 @@ nav
     display: inline-block
     margin: 0px
     padding: 0px 2px
+    width: 25%
+    position: relative
 
 li .ngx-datepicker-container .ngx-datepicker-calendar-container .topbar-container
 	background-color: #4d5567!important
@@ -93,6 +95,9 @@ li #guest_no_drop:after, #guest_no_shortcode:after, #guest_no_mobile:after, #boo
 
 ng-datepicker .ngx-datepicker-container input
 	padding: 5px 0 0 30px !important
+
+ng-datepicker[ng-reflect-is-disabled="true"]
+	cursor: not-allowed
 
 ng-datepicker .ngx-datepicker-container i
 	position: absolute !important
@@ -156,7 +161,7 @@ div.animated-text span.latter
 
 @keyframes titleAnimation
   0% 
-    transform: rotate(45deg) translateY(-100px)
+    transform: rotate(45deg) translateY(-150px)
     opacity: 1
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0)
   
@@ -171,7 +176,7 @@ div.animated-text span.latter
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0)
   
   100% 
-    transform: rotate(0deg) translateY(100px)
+    transform: rotate(0deg) translateY(150px)
     opacity: 0
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0)
 

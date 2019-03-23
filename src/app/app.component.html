@@ -20,19 +20,19 @@
       <div class="row mb-1 justify-content-center">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
           <ul class="navbar-nav justify-content-center">
-            <li class="nav-item margin-right-10 check-in" class="form-group col-3">
+            <li class="nav-item margin-right-10 check-in" class="form-group">
               <i class="fas fa-calendar-plus" style="position: absolute;top: 10px;left: 8px;z-index: 1;"></i>
               <ng-datepicker [(ngModel)]="startDate" [options]="startoptions" (ngModelChange)="onChange($event)">
               </ng-datepicker>
             </li>
-            <li class="nav-item margin-right-10 check-out" class="form-group col-3">
+            <li class="nav-item margin-right-10 check-out" class="form-group" [ngStyle]="!startDate?{'cursor': 'not-allowed'}:{'cursor': 'pointer'}">
               <i class="fas fa-calendar-minus" style="position: absolute;top: 10px;left: 8px;z-index: 1;"></i>
               <ng-datepicker [(ngModel)]="endDate" [options]="endoptions" [disabled]="!startDate"></ng-datepicker>
             </li>
-            <li class="nav-item margin-right-10" class="form-group col-3">
+            <li class="nav-item margin-right-10" class="form-group">
               <div class="guest_no " style="position: relative;"><i class="custom_icon_class_icon fas fa-user" style="position: absolute;top: 10px;left: 8px;bottom: 0;right: 0;"></i><input type="text" id="guest_no" name="guest_no" placeholder="Berth" class="advanced_select form-control custom_icon_class_input" value="" style="padding: 2px 0 0px 25px;"></div>
             </li>
-            <li class="nav-item margin-right-10 col-3">
+            <li class="nav-item margin-right-10">
               <button id="btn" class="btn search-btn" style="width: 100%;">Search</button>
             </li>
           </ul>

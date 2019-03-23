@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
 		main.style.backgroundImage = "url('"+this.slider[this.couter].image+"')";
 
 		// title.innerHTML = this.slider[this.couter].title;
-		title.innerHTML = '<span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-100px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">' + this.slider[this.couter].title.split('').join('</span><span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-100px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">') + '</span>';
+		title.innerHTML = '<span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-150px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">' + this.slider[this.couter].title.split('').join('</span><span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-150px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">') + '</span>';
 		content.innerHTML = this.slider[this.couter].content;
 		button.innerHTML = this.slider[this.couter].button;
 		main.style.backgroundRepeat = "no-repeat";
@@ -84,6 +84,9 @@ export class AppComponent implements OnInit {
 				x.forEach(ele=>{
 					ele.style.animationDelay = '0s';
 				})
+				// for(var i=0; i<x.length; i++){
+				// 	x[i].style.animationDelay = '0s';
+				// }
 			},4000);
 		setInterval(()=>{
 			// main.style.overflow= 'auto';
@@ -92,7 +95,7 @@ export class AppComponent implements OnInit {
 				this.couter = 0;
 			main.style.backgroundImage = "url('"+this.slider[this.couter].image+"')";
 			// title.innerHTML = this.slider[this.couter].title;
-			title.innerHTML = '<span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-100px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">' + this.slider[this.couter].title.split('').join('</span><span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-100px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">') + '</span>';
+			title.innerHTML = '<span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-150px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">' + this.slider[this.couter].title.split('').join('</span><span class="latter" style="color: #ffffff;opacity: 1;display: inline-block;float: left;clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);transform: rotate(45deg) translateY(-150px);animation-name: titleAnimation;animation-timing-function: linear;animation-duration: 5s;animation-iteration-count: infinite;white-space: pre-wrap;">') + '</span>';
 			content.innerHTML = this.slider[this.couter].content;
 			button.innerHTML = this.slider[this.couter].button;
 			node = document.getElementById('title').childNodes;
