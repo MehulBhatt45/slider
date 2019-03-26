@@ -3,12 +3,12 @@
 		<ul class="navbar-nav justify-content-center">
 			<li class="nav-item margin-right-10 check-in" class="form-group" *ngIf="datePickerToShow">
 				<i class="fas fa-calendar-plus" style="position: absolute;top: 10px;left: 8px;z-index: 1;color: #7f120a;"></i>
-				<ng-datepicker [(ngModel)]="startDate" [options]="startoptions" (ngModelChange)="onChange($event)">
+				<ng-datepicker [(ngModel)]="startDate" [options]="startoptions" (ngModelChange)="onChange($event)" position="top-right">
 				</ng-datepicker>
 			</li>
 			<li class="nav-item margin-right-10 check-out" class="form-group" *ngIf="datePickerToShow">
 				<i class="fas fa-calendar-minus" style="position: absolute;top: 10px;left: 8px;z-index: 1;color: #7f120a;"></i>
-				<ng-datepicker [(ngModel)]="endDate" [options]="endoptions" [disabled]="!startDate"></ng-datepicker>
+				<ng-datepicker [(ngModel)]="endDate" [options]="endoptions" [disabled]="!startDate" position="top-right"></ng-datepicker>
 			</li>
 			<li class="nav-item margin-right-10" class="form-group">
 				<div style="position: relative;"><i class="fas fa-user" style="position: absolute;top: 10px;left: 8px;bottom: 0;right: 0;width: 14px; height: 16px;color: #7f120a;"></i><input type="text" id="guest_no" name="guest_no" placeholder="Berth" class="advanced_select form-control custom_icon_class_input" value="" style="padding: 2px 0 0px 25px;"></div>
