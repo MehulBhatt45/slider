@@ -1,22 +1,50 @@
-$break-small: 786px
+$break-small: 992px
 $break-large: 1200px
 
+div.homenavigation
+  margin: 0
+  @media screen and (min-width: $break-small)
+    position: relative
+    top: -130px
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    width: 100%
+
 nav
-  padding: 5px
+  padding: 10px
   border: 2px solid gray
   background-color: rgba(128, 128, 128, 0.3)
   border-radius: 5px
   position: relative
   z-index: 11
+  width: 1170px
   @media screen and (max-width: $break-small)
+      padding: 0
       width: 100%
-      margin: 5px
+      margin: 0
+      background-color: transparent
+      border-radius: 0px
+      border: none
+  div.avd-search
+    width: 100%
+    z-index: 11
+    background-color: #b881fc
+    padding: 13px 15px 13px 25px
+    color: #fff
+    cursor: pointer
+    font-size: 18px
+    margin: 0px 0px 0px 0px
+    font-weight: 700
+    border-radius: 0
   ul
     margin: 0
     padding: 0
     list-style: none
+    width: 100%
     @media screen and (max-width: $break-small)
-      width: 100%
+      padding: 0 20px
 
   li
     display: inline-block
@@ -26,6 +54,7 @@ nav
     position: relative
     @media screen and (max-width: $break-small)
       width: 100%
+      margin: 5px 0
 
 li .ngx-datepicker-container .ngx-datepicker-calendar-container .topbar-container
 	background-color: #4d5567!important

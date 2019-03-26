@@ -1,13 +1,20 @@
-$break-small: 786px
+$break-small: 992px
 $break-large: 1200px
+$full: 100%
+$fix: -900
 
 div#main
 	position: relative
 	background-position: top left
+	background-size: cover
 	animation-name: bg-animation
 	animation-duration: 8s
 	animation-timing-function: linear
 	animation-iteration-count: infinite
+	overflow-x: hidden
+	padding: 100px
+	@media screen and (max-width: $break-small)
+		padding: 50px
 	&:after
 		content: ""
 		position: absolute
@@ -60,16 +67,17 @@ div.truck_image
 	img
 		animation-name: slidein
 		animation-timing-function: linear
-		animation-duration: 2s
+		animation-duration: 1.5s
 		position: absolute
 		max-width: 300px
 		height: 112px
 		top: 0
 		bottom: 0
+		left: 20px
 		margin: auto
 		@media screen and (max-width: $break-small)
-			max-width: 150px
-			height: 56px
+			max-width: 261px
+			height: 81px
 
 div.animated-text h1
 	font-weight: 700
@@ -81,6 +89,11 @@ div.animated-text h1
 	@media screen and (max-width: $break-small)
 		text-align: center !important
 		font-size: 25px
+
+div.animated-text h1
+	span.latter
+		float: none !important
+
 
 div.animated-text p
 	color: #ffffff
@@ -163,15 +176,17 @@ div.animated-text span.latter
 
 @keyframes slidein
 	0%
-		margin-left: calc(100% - 300px)
+		left: $full -$fix
+	50%
+		left: 600px
 	100%
-		margin-left: 0px
+		left: 20px
 	
 @keyframes bg-animation
 	0%
 		background-size: 100%
 	100%
-		background-size: 103%
+		background-size: 105%
 
 @keyframes bg-color-animation
 	0%
