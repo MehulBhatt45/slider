@@ -13,21 +13,21 @@ export class CarouselComponent implements OnInit {
 		image: '../assets/welcome-couple.jpg',
 		title: "20% OFF",
 		content1: "Book your 2019 holiday Now",
-		content2: "and get an Early Bird Discount"
+		content2: "and get an Early Bird Discount",
 		button: "GET OFFER" 
 	},
 	{
 		image: '../assets/cumbria-web.jpg',
 		title: "VISIT THE CUMBRIAN HILLS",
 		content1: "luxury campervans in",
-		content2: "This stunning setting"
+		content2: "This stunning setting",
 		button: "BOOK NOW" 
 	},
 	{
 		image: '../assets/nothern-web.jpg',
 		title: "VISIT THE NORTHERN LIGHTS ",
 		content1: "find out more about this",
-		content2: "luxury campervans offer"
+		content2: "luxury campervans offer",
 		button: "BOOK NOW" 
 	}];
 	couter = 0;
