@@ -48,7 +48,7 @@ export class CarouselComponent implements OnInit {
 		content2.innerHTML = this.slider[this.couter].content2;
 		button.innerHTML = this.slider[this.couter].button;
 		main.style.backgroundRepeat = "no-repeat";
-		main.style.backgroundSize = "cover";
+		main.style.backgroundSize = "100%";
 		var node = document.getElementById('title').childNodes;
 		console.log("NOdes", node);
 		for(var i=0; i<node.length; i++){

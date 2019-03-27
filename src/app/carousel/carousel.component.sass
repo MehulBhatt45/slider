@@ -1,18 +1,17 @@
+$break-xsmall: 426px
 $break-small: 992px
+$break-medium: 1024px
 $break-large: 1200px
 $full: 100%
 $fix: -900
 
 div#main
 	position: relative
-	background-position: top left
-	background-size: cover
 	animation-name: bg-animation
 	animation-duration: 8s
 	animation-timing-function: linear
 	animation-iteration-count: infinite
 	overflow-x: hidden
-	padding: 100px
 	@media screen and (max-width: $break-small)
 		padding: 50px
 	&:after
@@ -30,6 +29,10 @@ div#main
 		animation-duration: 8s
 		animation-timing-function: linear
 		animation-iteration-count: infinite
+	.content-section
+		margin: 100px 0
+		@media screen and (max-width: $break-small)
+			margin: 0
 
 div.slider_wrapper
 	margin: 0 auto
@@ -37,7 +40,7 @@ div.slider_wrapper
 	margin-top: 0px
 	margin-bottom: 0px
 	div.layers
-		padding: 100px
+		padding: 0 100px
 		display: inline-block
 		position: relative
 		z-index: 11
@@ -78,6 +81,9 @@ div.truck_image
 		@media screen and (max-width: $break-small)
 			max-width: 261px
 			height: 81px
+		@media screen and (max-width: $break-xsmall)
+			max-width: 160px
+			height: 50px
 
 div.animated-text h1
 	font-weight: 700
@@ -86,9 +92,13 @@ div.animated-text h1
 	width: 100%
 	overflow: hidden
 	color: #ffffff
+	@media screen and (max-width: $break-medium)
+		font-size: 30px
 	@media screen and (max-width: $break-small)
 		text-align: center !important
 		font-size: 25px
+	@media screen and (max-width: $break-medium)
+		font-size: 15px
 
 div.animated-text h1
 	span.latter
@@ -114,6 +124,8 @@ div.animated-text p
 		@media screen and (max-width: $break-small)
 			text-align: center !important
 			font-size: 15px
+		@media screen and (max-width: $break-medium)
+			font-size: 10px
 
 div.animated-text-content
 	margin: 50px 0
@@ -186,7 +198,7 @@ div.animated-text span.latter
 	0%
 		background-size: 100%
 	100%
-		background-size: 105%
+		background-size: 103%
 
 @keyframes bg-color-animation
 	0%
